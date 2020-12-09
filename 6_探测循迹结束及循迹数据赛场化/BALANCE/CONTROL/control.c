@@ -10,7 +10,7 @@
 #define RightAngleJudgeCountPre 2//CCD直角判断次数
 #define AcuteAngleTimeCountPre 120//锐角转弯时间
 #define PointDifference2 2 //循迹结束检测黑点数量
-#define StopJudgeCountPre 50//循迹结束条件判断次数
+#define StopJudgeCountPre 200//循迹结束条件判断次数
 u8 Flag_Target;
 int Voltage_Temp,Voltage_Count,Voltage_All,sum;
 
@@ -317,11 +317,11 @@ void  Find_CCD_Zhongzhi(void)
 		  break;	
 		}
 		////////////黑点数量计数/////////////
-		if(ADV[j]<CCD_Yuzhi)
+		if(ADV[j]<=CCD_Yuzhi)//6~118
 		{
 			UsefulPoint2 ++;
 		}
-		if((j>=80) && (ADV[j]<CCD_Yuzhi))
+		if((j>=80) && (ADV[j]<CCD_Yuzhi))//80~118
 		{
 			UsefulPoint++;
 		}
@@ -342,16 +342,20 @@ void  Find_CCD_Zhongzhi(void)
 	}
 	//////////直角弯探测结束///////////////////////
 	//////////循迹结束探测/////////////////////////
-//	if(ActionIndex == 2)
-//	{
-//		if(UsefulPoint < PointDifference2){
-//			if(++StopJudgeCount > StopJudgeCountPre)//多次判断
-//			{
-//				ActionFlag = 1;//摆脱CCD数据控制
-//				ActionIndex = 3;//进入循迹结束后的操作
-//			}
-//		}
-//	}
+	if(ActionIndex == 2)
+	{
+		if(UsefulPoint < PointDifference2){
+			if(++StopJudgeCount > StopJudgeCountPre)//多次判断
+			{
+				ActionFlag = 1;//摆脱CCD数据控制
+				ActionIndex = 3;//进入循迹结束后的操作
+			}
+		}
+		else
+		{
+			StopJudgeCount = 0;//判断中断则判断有效次数清零
+		}
+	}
 	///////////循迹结束探测结束////////////////////
 	
 //if((Right-Left < 100)&&RightAngleFlag) RightAngleFlag = 0;//结束直角
