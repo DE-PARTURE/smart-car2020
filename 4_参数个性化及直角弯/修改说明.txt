@@ -1,0 +1,9 @@
+1、将直流电机PWM限幅修改至3000并且调整了CCD巡线模式速度：
+2、伺服电机SERVO_INIT 1650;调控范围:1000-1650-2500
+3、修改了select函数的CCD和APP模式切换的先后顺序，先在默认是CCD模式
+#define ANGLE_P 0.010f -> #define ANGLE_P 0.015f
+void Get_RC(void)
+{
+	Velocity = 40;->Velocity = 15;
+}
+4、引入直角弯检测及简单控制算法
