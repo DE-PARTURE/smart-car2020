@@ -407,7 +407,7 @@ void  Find_CCD_Zhongzhi(void)
 	//////////循迹结束探测/////////////////////////
 	if(ActionIndex == 2)
 	{
-		if(UsefulPoint < PointDifference2){
+		if(UsefulPoint2 < PointDifference2){
 			if(++StopJudgeCount > StopJudgeCountPre)//多次判断
 			{
 				ActionFlag = 1;//摆脱CCD数据控制
