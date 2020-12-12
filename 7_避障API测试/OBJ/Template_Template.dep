@@ -1,6 +1,6 @@
 Dependencies for Project 'Template', Target 'Template': (DO NOT MODIFY !)
-F (.\main.c)(0x5FD0D988)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+F (.\main.c)(0x5FD4BABC)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -110,7 +110,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x5D67CC14)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x5D67CC0D)
 F (..\SYSTEM\delay\delay.c)(0x5FCCA4DF)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
 I (..\SYSTEM\delay\delay.h)(0x5D67CC05)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -157,7 +157,7 @@ I (E:\Keil\Software\ARM\ARMCC\include\string.h)(0x5EC77604)
 I (E:\Keil\Software\ARM\ARMCC\include\stdlib.h)(0x5EC775FC)
 I (E:\Keil\Software\ARM\ARMCC\include\math.h)(0x5EC77604)
 F (..\SYSTEM\sys\sys.c)(0x5FCCA481)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\sys.o --omf_browse ..\obj\sys.crf --depend ..\obj\sys.d)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -206,7 +206,7 @@ I (E:\Keil\Software\ARM\ARMCC\include\stdlib.h)(0x5EC775FC)
 I (E:\Keil\Software\ARM\ARMCC\include\math.h)(0x5EC77604)
 F (..\SYSTEM\usart\usart.c)(0x5FCE21D6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\usart.o --omf_browse ..\obj\usart.crf --depend ..\obj\usart.d)
 I (..\SYSTEM\usart\usart.h)(0x5D67CC03)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -925,7 +925,7 @@ I (..\STM32F10x_FWLib\inc\misc.h)(0x5D67CC0D)
 F (..\README.TXT)(0x00000000)()
 F (..\HAREWARE\LED\led.c)(0x5FCCA499)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
 I (..\HAREWARE\LED\led.h)(0x5D67CC49)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -973,7 +973,7 @@ I (E:\Keil\Software\ARM\ARMCC\include\stdlib.h)(0x5EC775FC)
 I (E:\Keil\Software\ARM\ARMCC\include\math.h)(0x5EC77604)
 F (..\HAREWARE\ADC\adc.c)(0x5FCE17F2)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\adc.o --omf_browse ..\obj\adc.crf --depend ..\obj\adc.d)
 I (..\HAREWARE\ADC\adc.h)(0x5FCCA67B)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -1021,7 +1021,7 @@ I (E:\Keil\Software\ARM\ARMCC\include\stdlib.h)(0x5EC775FC)
 I (E:\Keil\Software\ARM\ARMCC\include\math.h)(0x5EC77604)
 F (..\HAREWARE\ENCODER\encoder.c)(0x5FCCA4A8)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\encoder.o --omf_browse ..\obj\encoder.crf --depend ..\obj\encoder.d)
 I (..\HAREWARE\ENCODER\encoder.h)(0x5D67CC4B)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -1069,7 +1069,7 @@ I (E:\Keil\Software\ARM\ARMCC\include\stdlib.h)(0x5EC775FC)
 I (E:\Keil\Software\ARM\ARMCC\include\math.h)(0x5EC77604)
 F (..\HAREWARE\EXTI\exti.c)(0x5FCCA4A2)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\exti.o --omf_browse ..\obj\exti.crf --depend ..\obj\exti.d)
 I (..\HAREWARE\EXTI\exti.h)(0x5D67CC4A)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -1117,7 +1117,7 @@ I (E:\Keil\Software\ARM\ARMCC\include\stdlib.h)(0x5EC775FC)
 I (E:\Keil\Software\ARM\ARMCC\include\math.h)(0x5EC77604)
 F (..\HAREWARE\KEY\key.c)(0x5FCE0D9C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
 I (..\HAREWARE\KEY\key.h)(0x5D67CC49)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -1165,7 +1165,7 @@ I (E:\Keil\Software\ARM\ARMCC\include\stdlib.h)(0x5EC775FC)
 I (E:\Keil\Software\ARM\ARMCC\include\math.h)(0x5EC77604)
 F (..\HAREWARE\MOTO\moto.c)(0x5FCCEA88)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\moto.o --omf_browse ..\obj\moto.crf --depend ..\obj\moto.d)
 I (..\HAREWARE\MOTO\moto.h)(0x5D67CC48)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -1213,7 +1213,7 @@ I (E:\Keil\Software\ARM\ARMCC\include\stdlib.h)(0x5EC775FC)
 I (E:\Keil\Software\ARM\ARMCC\include\math.h)(0x5EC77604)
 F (..\HAREWARE\OLED\oled.c)(0x5FCE1465)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\oled.o --omf_browse ..\obj\oled.crf --depend ..\obj\oled.d)
 I (..\HAREWARE\OLED\oled.h)(0x5FCCAAFE)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -1262,7 +1262,7 @@ I (E:\Keil\Software\ARM\ARMCC\include\math.h)(0x5EC77604)
 I (..\HAREWARE\OLED\oledfont.h)(0x5D67CC48)
 F (..\HAREWARE\STMFLASH\stmflash.c)(0x5F840418)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stmflash.o --omf_browse ..\obj\stmflash.crf --depend ..\obj\stmflash.d)
 I (..\HAREWARE\STMFLASH\stmflash.h)(0x5D67CC46)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -1310,7 +1310,7 @@ I (E:\Keil\Software\ARM\ARMCC\include\stdlib.h)(0x5EC775FC)
 I (E:\Keil\Software\ARM\ARMCC\include\math.h)(0x5EC77604)
 F (..\HAREWARE\USART3\usart3.c)(0x5D67CC44)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\usart3.o --omf_browse ..\obj\usart3.crf --depend ..\obj\usart3.d)
 I (..\HAREWARE\USART3\usart3.h)(0x5D67CC44)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -1356,9 +1356,9 @@ I (..\BALANCE\DATASCOP_DP\DataScope_DP.h)(0x5D67CC4D)
 I (E:\Keil\Software\ARM\ARMCC\include\string.h)(0x5EC77604)
 I (E:\Keil\Software\ARM\ARMCC\include\stdlib.h)(0x5EC775FC)
 I (E:\Keil\Software\ARM\ARMCC\include\math.h)(0x5EC77604)
-F (..\BALANCE\CONTROL\control.c)(0x5FD19A49)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\control.o --omf_browse ..\obj\control.crf --depend ..\obj\control.d)
+F (..\BALANCE\CONTROL\control.c)(0x5FD4C575)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\control.o --omf_browse ..\obj\control.crf --depend ..\obj\control.d)
 I (..\BALANCE\CONTROL\control.h)(0x5D67CC4E)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)
@@ -1406,7 +1406,7 @@ I (E:\Keil\Software\ARM\ARMCC\include\stdlib.h)(0x5EC775FC)
 I (E:\Keil\Software\ARM\ARMCC\include\math.h)(0x5EC77604)
 F (..\BALANCE\SHOW\show.c)(0x5FD07BFD)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWARE\LED -I ..\HAREWARE\ADC -I ..\HAREWARE\ENCODER -I ..\HAREWARE\EXTI -I ..\HAREWARE\KEY -I ..\HAREWARE\MOTO -I ..\HAREWARE\OLED -I ..\HAREWARE\STMFLASH -I ..\HAREWARE\TIMER -I ..\BALANCE\CONTROL -I ..\BALANCE\DATASCOP_DP -I ..\BALANCE\SHOW -I ..\HAREWARE\PSTWO -I ..\HAREWARE\USART3-I.\RTE\_Template-IE:\Keil\Data\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IE:\Keil\Software\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\show.o --omf_browse ..\obj\show.crf --depend ..\obj\show.d)
 I (..\BALANCE\SHOW\show.h)(0x5D67CC4D)
-I (..\SYSTEM\sys\sys.h)(0x5FD0D982)
+I (..\SYSTEM\sys\sys.h)(0x5FD4AFBA)
 I (..\USER\stm32f10x.h)(0x5D67CBFE)
 I (..\CORE\core_cm3.h)(0x5D67CC4C)
 I (E:\Keil\Software\ARM\ARMCC\include\stdint.h)(0x5EC775FC)

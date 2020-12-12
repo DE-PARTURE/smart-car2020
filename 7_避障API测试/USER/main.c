@@ -1,26 +1,7 @@
 #include "sys.h"
 
 
-//-----------------------全局变量-----------------------//
-//直角弯
-u8 RightAngleFlag = 0,RightAngleJudgeCount = 0,RightAngleTimeCount = 0;
-//锐角弯
-u8 AcuteAngleTimeCount = 0;
-//循迹结束
-u8 StopJudgeCount = 0;//▲▲▲▲
-//指令模式：3~
-u16 CMDTimeCount = 0;//▲▲▲▲
-//特殊地形检测或行动索引
-//Index:0->直角弯检测索引 1->锐角弯行动索引 2->循迹结束探测索引 
-//			3->循迹结束&左转使车身和原方向垂直 4->
-//▲▲▲▲
-u8 ActionIndex = 0,ActionFlag = 0;//特殊动作执行标志(用以打断依据CCD数据的控制流程)
-//CCD检测相关
-u8 CCD_YuzhiBias = 2;
-u16	UsefulPoint = 0;//检测80~118黑点数目计数变量
-u16	UsefulPoint2 = 0;//检测6~118黑点数目计数变量
 
-//-----------------------全局变量-----------------------//
 u8 Flag_Way=0,Flag_Show=0,Flag_Stop=1,Flag_Next;                 //停止标志位和 显示标志位 默认停止 显示打开
 int Encoder_Left,Encoder_Right;             //左右编码器的脉冲计数
 int Encoder_A_EXTI,Flag_Direction;  
