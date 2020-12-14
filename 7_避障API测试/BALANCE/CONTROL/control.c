@@ -19,24 +19,23 @@ u16 CMDTimeCount = 0;//▲▲▲▲
 //▲▲▲▲
 u8 ActionIndex = 0,ActionFlag = 0;//特殊动作执行标志(用以打断依据CCD数据的控制流程)
 //CCD检测相关
-u8 CCD_YuzhiBias = 1;
+u8 CCD_YuzhiBias = 8;
 u16	UsefulPoint = 0;//检测80~118黑点数目计数变量
 u16	UsefulPoint2 = 0;//检测6~118黑点数目计数变量
 
 //-----------------------全局变量-----------------------//
 //
-#define TurnLeft 	171
+#define TurnLeft 	175
 #define TurnRight 195
-//
 #define StopIndex 13//▲▲▲▲
 #define RightAngleTimeCountPre 80//直角转弯时间
 #define PointDifference 35//CCD直角判断80-118有效Point数量
 #define RightAngleJudgeCountPre 5//CCD直角判断次数
-#define AcuteAngleTimeCountPre 120//锐角转弯时间
+#define AcuteAngleTimeCountPre 110//锐角转弯时间
 #define PointDifference2 2 //循迹结束检测黑点数量
-#define StopJudgeCountPre 50//循迹结束条件判断次数
+#define StopJudgeCountPre 60//循迹结束条件判断次数
 #define CMDTimeCountPre1 TurnLeft//左
-#define CMDTimeCountPre2 150//直
+#define CMDTimeCountPre2 175//直
 #define CMDTimeCountPre3 TurnLeft//左
 #define CMDTimeCountPre4 200//直
 #define CMDTimeCountPre5 TurnRight//右
@@ -44,7 +43,7 @@ u16	UsefulPoint2 = 0;//检测6~118黑点数目计数变量
 #define CMDTimeCountPre7 TurnLeft//左
 #define CMDTimeCountPre8 825//直
 #define CMDTimeCountPre9 TurnLeft//左
-#define CMDTimeCountPre10 350//直
+#define CMDTimeCountPre10 342//直
 
 u8 Flag_Target;
 int Voltage_Temp,Voltage_Count,Voltage_All,sum;
@@ -251,7 +250,7 @@ void Key(void)
 	if(tmp==2)Flag_Stop=!Flag_Stop;//双击控制小车的启停
 	if(tmp==1&&Flag_Way==2)
 	{
-		if(CCD_YuzhiBias < 6)
+		if(CCD_YuzhiBias < 8)
 		{
 			CCD_YuzhiBias ++;
 		}
