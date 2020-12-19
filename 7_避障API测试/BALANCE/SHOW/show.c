@@ -1,4 +1,5 @@
 #include "show.h"
+#include "sys.h"
   /**************************************************************************
 作者：
 我的淘宝小店：http://shop114407458.taobao.com/
@@ -29,19 +30,39 @@ void oled_show(void)
 			OLED_ShowNumber(95,10, CCD_Yuzhi,3,12);
 		}
 									
-		                      OLED_ShowString(00,20,"EncoLEFT");    //编码器数据
-		if( Encoder_Left<0)		OLED_ShowString(80,20,"-"),
-		                      OLED_ShowNumber(95,20,-Encoder_Left,5,12);
-		else                 	OLED_ShowString(80,20,"+"),
-		                      OLED_ShowNumber(95,20, Encoder_Left,5,12);
+//		                      OLED_ShowString(00,20,"EncoLEFT");    //编码器数据
+//		if( Encoder_Left<0)		OLED_ShowString(80,20,"-"),
+//		                      OLED_ShowNumber(95,20,-Encoder_Left,5,12);
+//		else                 	OLED_ShowString(80,20,"+"),
+//		                      OLED_ShowNumber(95,20, Encoder_Left,5,12);
 
-		                      OLED_ShowString(00,30,"EncoRIGHT");
-		if(Encoder_Right<0)	  OLED_ShowString(80,30,"-"),
-		                      OLED_ShowNumber(95,30,-Encoder_Right,5,12);
-		else               		OLED_ShowString(80,30,"+"),
-		                      OLED_ShowNumber(95,30,Encoder_Right,5,12);	
+//		                      OLED_ShowString(00,30,"EncoRIGHT");
+//		if(Encoder_Right<0)	  OLED_ShowString(80,30,"-"),
+//		                      OLED_ShowNumber(95,30,-Encoder_Right,5,12);
+//		else               		OLED_ShowString(80,30,"+"),
+//		                      OLED_ShowNumber(95,30,Encoder_Right,5,12);
+		if(PARAIndex == 2){
+			OLED_ShowString(00,20,"-L:"); OLED_ShowNumber(25,20,TurnLeft,5,12);
+		}else{
+			OLED_ShowString(00,20," L:"); OLED_ShowNumber(25,20,TurnLeft,5,12);
+		}
+		if(PARAIndex == 3){
+			OLED_ShowString(00,30,"-R:"); OLED_ShowNumber(25,30,TurnRight,5,12);
+		}else{
+			OLED_ShowString(00,30," R:"); OLED_ShowNumber(25,30,TurnRight,5,12);
+		}
+		if(PARAIndex == 4){
+			OLED_ShowString(70,20,"-Le:"); OLED_ShowNumber(95,20,LeftBias,5,12);
+		}else{
+			OLED_ShowString(70,20," Le:"); OLED_ShowNumber(95,20,LeftBias,5,12);
+		}
+		if(PARAIndex == 5){
+			OLED_ShowString(70,30,"-La:"); OLED_ShowNumber(95,30,LastBias,5,12);
+		}else{
+			OLED_ShowString(70,30," La:"); OLED_ShowNumber(95,30,LastBias,5,12);
+		}
 
-
+		//电压值及开关状态
 		                      OLED_ShowString(00,40,"VOLTAGE");
 		                      OLED_ShowString(68,40,".");
 		                      OLED_ShowString(90,40,"V");
@@ -50,18 +71,33 @@ void oled_show(void)
 		 if(Voltage%100<10) 	OLED_ShowNumber(72,40,0,2,12);
 		                    
 													if(Flag_Stop==0)
-													OLED_ShowString(103,40,"O-N");
+													{
+														if(PARAIndex == 1){
+															OLED_ShowString(94,40,"-O-N");
+														}else{
+															OLED_ShowString(94,40," O-N");
+														}
+													}
 													if(Flag_Stop==1)
-													OLED_ShowString(103,40,"OFF");
+													{
+														if(PARAIndex == 1){
+															OLED_ShowString(94,40,"-OFF");
+														}else{
+															OLED_ShowString(94,40," OFF");
+														}
+														
+													}
+													
 		
-		
-													OLED_ShowString(00,50,"MODE-");
-													if(Flag_Way==0)               OLED_ShowString(40,50,"APP");
-													else if(Flag_Way==1)          OLED_ShowString(40,50,"PS2");
-													else if(Flag_Way==2)				  OLED_ShowNumber(40,50, UsefulPoint2,3,12);
-													else if(Flag_Way==3)				  OLED_ShowString(40,50,"ELE");
-
-													OLED_ShowString(80,50,"B");
+		//个性化参数
+													OLED_ShowString(00,50,"PARA-");
+													if(Flag_Way==2)				  OLED_ShowNumber(40,50, UsefulPoint2,3,12);
+													
+													if(PARAIndex == 0){
+														OLED_ShowString(80,50,"-B");
+													}else{
+														OLED_ShowString(80,50," B");
+													}
 													OLED_ShowNumber(95,50,CCD_YuzhiBias,4,12);
 		//=============刷新=======================//
 		OLED_Refresh_Gram();	
@@ -90,31 +126,7 @@ void APP_Show(void)
 	 else
 	 printf("{B%d:%d:%d:%d}$",(int)Servo,(int)(Voltage),Encoder_Left,Encoder_Right);//打印到APP上面 显示波形
 }
-/**************************************************************************
-函数功能：虚拟示波器往上位机发送数据 关闭显示屏
-入口参数：无
-返回  值：无
-作    者：
-**************************************************************************/
-void DataScope(void)
-{   
-		DataScope_Get_Channel_Data( Servo-SERVO_INIT, 1 );       //显示角度 单位：度（°）
-		DataScope_Get_Channel_Data( Encoder_Left, 2 );         //显示超声波测量的距离 单位：CM 
-		DataScope_Get_Channel_Data( Encoder_Right, 3 );                 //显示电池电压 单位：V
-//		DataScope_Get_Channel_Data( 0 , 4 );   
-//		DataScope_Get_Channel_Data(0, 5 ); //用您要显示的数据替换0就行了
-//		DataScope_Get_Channel_Data(0 , 6 );//用您要显示的数据替换0就行了
-//		DataScope_Get_Channel_Data(0, 7 );
-//		DataScope_Get_Channel_Data( 0, 8 ); 
-//		DataScope_Get_Channel_Data(0, 9 );  
-//		DataScope_Get_Channel_Data( 0 , 10);
-		Send_Count = DataScope_Data_Generate(3);
-		for( i = 0 ; i < Send_Count; i++) 
-		{
-		while((USART1->SR&0X40)==0);  
-		USART1->DR = DataScope_OutPut_Buffer[i]; 
-		}
-}
+
 void OLED_DrawPoint_Shu(u8 x,u8 y,u8 t)
 { 
 	 u8 i=0;
@@ -145,7 +157,7 @@ void oled_show_once(void)
 	if(Flag_Way==0)         OLED_ShowString(50,30,"APP");
 	//if(Flag_Way==1)         OLED_ShowString(50,30,"PS2");
 	if(Flag_Way==2)				  OLED_ShowString(50,30,"CCD");
-	if(Flag_Way==3)				  OLED_ShowString(50,30,"PARA");
+	//if(Flag_Way==3)				  OLED_ShowString(50,30,"PARA");
 	
 	OLED_ShowString(0,40,"Press User Key");
   OLED_ShowString(0,50,"TO End Selection");

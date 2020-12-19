@@ -112,6 +112,11 @@ extern u8 ActionIndex,ActionFlag;
 extern u8 CCD_YuzhiBias;
 extern u16 UsefulPoint;
 extern u16 UsefulPoint2;
+extern u8 PARAIndex;
+extern u8 TurnLeft;
+extern u8 TurnRight;
+extern u8 LeftBias;
+extern u8 LastBias;
 /////////////////////////////////////////////////////////////////  
 void Stm32_Clock_Init(u8 PLL);  //时钟初始化  
 void Sys_Soft_Reset(void);      //系统软复位

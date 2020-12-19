@@ -10,28 +10,31 @@ u8 RightAngleFlag = 0,RightAngleJudgeCount = 0,RightAngleTimeCount = 0;
 //锐角弯
 u8 AcuteAngleTimeCount = 0;
 //循迹结束
-u8 StopJudgeCount = 0;//▲▲▲▲
-//指令模式：3~
-u16 CMDTimeCount = 0;//▲▲▲▲
+u8 StopJudgeCount = 0;
+//指令模式：3~13
+u16 CMDTimeCount = 0;
 //特殊地形检测或行动索引
 //Index:0->直角弯检测索引 1->锐角弯行动索引 2->循迹结束探测索引 
-//			3->循迹结束&左转使车身和原方向垂直 4->13->定向行驶
-//▲▲▲▲
+//			3->循迹结束&左转使车身和原方向垂直 4->12->定向行驶 13->停止行驶
 u8 ActionIndex = 0,ActionFlag = 0;//特殊动作执行标志(用以打断依据CCD数据的控制流程)
 //CCD检测相关
 u8 CCD_YuzhiBias = 8;
 u16	UsefulPoint = 0;//检测80~118黑点数目计数变量
 u16	UsefulPoint2 = 0;//检测6~118黑点数目计数变量
-
-//-----------------------全局变量-----------------------//
 //
-#define TurnLeft 	175
-#define TurnRight 195
-#define StopIndex 13//▲▲▲▲
+u8 PARAIndex = 0;
+//0->B 1->ON-OFF 2->左转参数 3->右转参数 4->左偏置 5->终偏置
+//-----------------------全局变量-----------------------//
+u8 TurnLeft = 171;//左转参数
+u8 TurnRight = 192;//右转参数
+u8 LeftBias = 0;//12//左偏置
+u8 LastBias = 0;//14//终偏置
+
+#define StopIndex 13
 #define RightAngleTimeCountPre 80//直角转弯时间
 #define PointDifference 35//CCD直角判断80-118有效Point数量
 #define RightAngleJudgeCountPre 5//CCD直角判断次数
-#define AcuteAngleTimeCountPre 110//锐角转弯时间
+#define AcuteAngleTimeCountPre 100//锐角转弯时间
 #define PointDifference2 2 //循迹结束检测黑点数量
 #define StopJudgeCountPre 60//循迹结束条件判断次数
 #define CMDTimeCountPre1 TurnLeft//左
@@ -39,11 +42,11 @@ u16	UsefulPoint2 = 0;//检测6~118黑点数目计数变量
 #define CMDTimeCountPre3 TurnLeft//左
 #define CMDTimeCountPre4 200//直
 #define CMDTimeCountPre5 TurnRight//右
-#define CMDTimeCountPre6 100//直
-#define CMDTimeCountPre7 TurnLeft//左
-#define CMDTimeCountPre8 825//直
+#define CMDTimeCountPre6 105//直
+#define CMDTimeCountPre7 TurnLeft+LeftBias//左
+#define CMDTimeCountPre8 830//直
 #define CMDTimeCountPre9 TurnLeft//左
-#define CMDTimeCountPre10 342//直
+#define CMDTimeCountPre10 320+LastBias//直
 
 u8 Flag_Target;
 int Voltage_Temp,Voltage_Count,Voltage_All,sum;
@@ -100,7 +103,7 @@ void TIM1_UP_IRQHandler(void)
 			 }
 		 }
 		 /////////////////延时结束//////////////////////////
-		 /////////////////根据移动指令走延时////////////////
+		 /////////////////定向行驶延时////////////////
 		 if((CMDTimeCount>0)&&(!Flag_Stop)&&(ActionIndex>2))
 		 {
 			 CMDTimeCount --;
@@ -156,7 +159,7 @@ void TIM1_UP_IRQHandler(void)
 					Kinematic_Analysis(15,-PI/3);
 				}
 				///////锐角转弯结束////////////////////////////////
-				///////根据移动指令走//////////////////////////////
+				///////定向行驶////////////////////////////////////
 				if(ActionIndex == 3){//左转90度
 					Kinematic_Analysis(15,-PI/4);
 				}else if(ActionIndex == 4){//直走
@@ -179,17 +182,17 @@ void TIM1_UP_IRQHandler(void)
 					Kinematic_Analysis(15,0);
 				}
 				///////根据移动指令走结束//////////////////////////
-				Motor_A=Incremental_PI_A(Encoder_Left,Target_A);                   //===速度闭环控制计算电机A最终PWM
-				Motor_B=Incremental_PI_B(Encoder_Right,Target_B);                  //===速度闭环控制计算电机B最终PWM 
-				Xianfu_Pwm();                                                      //===PWM限幅
-				Set_Pwm(Motor_A,Motor_B,Servo);                                 	 //===赋值给PWM寄存器 
+				Motor_A=Incremental_PI_A(Encoder_Left,Target_A);                   	//===速度闭环控制计算电机A最终PWM
+				Motor_B=Incremental_PI_B(Encoder_Right,Target_B);                  	//===速度闭环控制计算电机B最终PWM 
+				Xianfu_Pwm();                                                      	//===PWM限幅
+				Set_Pwm(Motor_A,Motor_B,Servo);                                 	 	//===赋值给PWM寄存器 
 				
 			}
-			else  Set_Pwm(0,0,SERVO_INIT);                                 						 //===赋值给PWM寄存器  	
+			else  Set_Pwm(0,0,SERVO_INIT);                                 				//===赋值给PWM寄存器  	
 					
-				     Voltage_Temp=Get_battery_volt();		                                 //=====读取电池电压		
-					   Voltage_Count++;                                                     //=====平均值计数器
-					   Voltage_All+=Voltage_Temp;                                           //=====多次采样累积
+				     Voltage_Temp=Get_battery_volt();		                            //=====读取电池电压		
+					   Voltage_Count++;                                               //=====平均值计数器
+					   Voltage_All+=Voltage_Temp;                                     //=====多次采样累积
 			if(Voltage_Count==100) 
 			{
 				//=====求平均值		 
@@ -245,22 +248,42 @@ void Xianfu_Pwm(void)
 **************************************************************************/
 void Key(void)
 {	
-	u8 tmp,tmp2;
+	u8 tmp;
 	tmp=click_N_Double(40); 
-	if(tmp==2)Flag_Stop=!Flag_Stop;//双击控制小车的启停
 	if(tmp==1&&Flag_Way==2)
 	{
-		if(CCD_YuzhiBias < 8)
-		{
-			CCD_YuzhiBias ++;
+
+		if(PARAIndex == 0){
+			if(CCD_YuzhiBias < 8)
+			{
+				CCD_YuzhiBias ++;
+			}
+			else
+			{
+				CCD_YuzhiBias = 0;
+			}
+		}else if(PARAIndex == 1){
+			Flag_Stop=!Flag_Stop;
+		}else if(PARAIndex == 2){
+			TurnLeft ++;
+		}else if(PARAIndex == 3){
+			TurnRight ++;
+		}else if(PARAIndex == 4){
+			LeftBias ++;
+			LeftBias ++;
+		}else if(PARAIndex == 5){
+			LastBias ++;
+			LastBias ++;
 		}
-		else
-		{
-			CCD_YuzhiBias = 0;
+		
+	}
+  if(tmp==2)//双击切换参数调整索引
+	{
+		PARAIndex++;
+		if(PARAIndex == 6){
+			PARAIndex = 0;
 		}
-	}//单击增加偏置
-	tmp2=Long_Press();          
-  if(tmp2==1)Flag_Show=!Flag_Show;//控制小车的显示状态
+	}
 }
 
 /**************************************************************************
@@ -419,7 +442,7 @@ void  Find_CCD_Zhongzhi(void)
 	///////////直角弯探测//////////////////
 	if((UsefulPoint > PointDifference) 
 										&& (ActionIndex == 0) && (++RightAngleJudgeCount>RightAngleJudgeCountPre) 
-												&& (Flag_Stop == 0))//直角弯检测
+												&& (Flag_Stop == 0) && (!RightAngleFlag))//直角弯检测
 	{
 			RightAngleFlag = 1;//方向转死标志位
 			RightAngleTimeCount = RightAngleTimeCountPre;//方向转死延时赋值
